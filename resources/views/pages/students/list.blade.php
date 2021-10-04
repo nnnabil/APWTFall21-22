@@ -13,6 +13,7 @@
                 <td>{{$student->id}}</td>
                 <td>{{$student->dob}}</td>
                 <td><a href="/student/edit/{{$student->id}}/{{$student->name}}">Edit</a></td>
+                <td><a href="/student/delete/{{$student->id}}/{{$student->name}}">Delete</a></td>
             </tr>
         @endforeach
     </table>
