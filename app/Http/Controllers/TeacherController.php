@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Teacher;
+use App\Models\Course;
 
 class TeacherController extends Controller
 {
@@ -23,5 +24,14 @@ class TeacherController extends Controller
 
         $teachers = Teacher::all();
         return view('pages.teachers.list')->with('teachers',$teachers);
+    }
+    public function teacherCourses(){
+
+        $t = Teacher::where('id',1)->first();
+        //hasmany
+        // return $t->courses;
+        
+        //eloquent
+        return $t->assignedCourses();
     }
 }
