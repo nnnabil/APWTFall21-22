@@ -5,6 +5,8 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LoginController;
+
 
 
 /*
@@ -40,3 +42,12 @@ Route::get('/teacher/courses',[TeacherController::class,'teacherCourses'])->name
 
 //course
 Route::get('/courses',[CourseController::class,'courseTeacher'])->name('teacher.courses');
+
+
+//login
+Route::get('/login',[LoginController::class,'login'])->name('login');
+Route::post('/login',[LoginController::class,'loginSubmit'])->name('login');
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+
+//teacher dash
+Route::get('/teacher/dash', [PagesController::class,'teacherDash'])->name('teacherDash')->middleware('ValidTeacher');

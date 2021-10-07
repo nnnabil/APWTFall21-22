@@ -9,6 +9,10 @@ class PagesController extends Controller
     public function home(){
         return view('pages.home');
     }
+    public function teacherDash(){
+        return view('pages.teachers.teacherDash');
+
+    }
     //
     public function contact(){
         return view('pages.contact');

@@ -6,6 +6,9 @@ use App\Models\Student;
 
 class StudentController extends Controller
 {
+    public function __construct(){
+        $this->middleware('ValidTeacher');
+    }
     //
     public function Create(){
         return view('pages.students.create');
