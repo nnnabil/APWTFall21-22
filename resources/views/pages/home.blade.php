@@ -4,6 +4,6 @@
     @if(Session::get('user')) {{Session::get('user')}} 
         <a class="btn btn-danger" href="{{route('logout')}}">Log out </a>
     @endif
-    <img src="{{ asset('storage/Person 1.png') }}">
+    <img src="{{ asset('images/Person 1.png') }}">
     <img src="{{ asset('images/Person 2.png') }}">
 @endsection
